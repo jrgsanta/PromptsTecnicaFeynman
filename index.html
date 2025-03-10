@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnica Feynman: Generador de Prompts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Técnica Feynman: Generador de Prompts</h1>
+    </header>
+
+    <main>
+        <section class="diagram-container">
+            <div class="diagram">
+                <div class="step-box" id="step1">
+                    <h3>1. Elige un concepto</h3>
+                    <div class="dropdown-content" id="dropdown1"></div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step-box" id="step2">
+                    <h3>2. Enséñalo con tus propias palabras</h3>
+                    <div class="dropdown-content" id="dropdown2"></div>
+                </div>
+                <div class="feedback-loop">
+                    <div class="arrow loop">↺</div>
+                </div>
+                <div class="step-box" id="step3">
+                    <h3>3. Identifica lagunas en la comprensión</h3>
+                    <div class="dropdown-content" id="dropdown3"></div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step-box" id="step4">
+                    <h3>4. Simplifica y Revisa</h3>
+                    <div class="dropdown-content" id="dropdown4"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="buttons-container">
+            <button id="historyBtn" class="main-button">Prompts Generados</button>
+        </section>
+
+        <!-- Modal para mostrar y completar el prompt -->
+        <div id="promptModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="promptTitle"></h2>
+                <p id="promptDescription"></p>
+                
+                <div id="parameterInputContainer" class="parameter-container">
+                    <label for="parameterInput">Parámetro:</label>
+                    <input type="text" id="parameterInput">
+                </div>
+                
+                <div class="generated-prompt-container">
+                    <h3>Prompt generado:</h3>
+                    <p id="generatedPrompt"></p>
+                    <button id="copyBtn" class="action-button">Copiar al portapapeles</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para el historial de prompts -->
+        <div id="historyModal" class="modal">
+            <div class="modal-content history-content">
+                <span class="close history-close">&times;</span>
+                <h2>Historial de Prompts Generados</h2>
+                <div id="historyContainer"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Técnica Feynman: Generador de Prompts</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
